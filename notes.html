@@ -1,0 +1,392 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NOTES</title>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgba(14, 18, 27, 1);
+  color: white;
+}
+
+/* Navbar Layout */
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #040427;
+  gap: 1rem;
+}
+
+.nav-logo .logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img1, .logo-img2 {
+  height: 48px;
+  margin-right: 0.5rem;
+}
+
+.menu {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.menu a {
+  color: #e04693;
+  text-decoration: none;
+  font-size: 1.7rem;
+  padding: 0.4rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.menu a:hover {
+  background-color: rgb(230, 177, 107);
+}
+
+.search:hover {
+  background-color: rgb(230, 177, 107);
+}
+
+.search {
+  flex: 1 1 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: #040427;
+  height: 50px;
+  justify-content: center;
+  margin-bottom: 5px;
+  z-index: 1; 
+  box-shadow: none;
+  transition: box-shadow 0.3s ease, z-index 0.3s ease;
+}
+
+#searchBar {
+  width: 100%;
+  max-width: 500px;
+  padding: 0.5rem;
+  height: 50px;
+  border-radius: 8px;
+  background-color: #040427;
+  font-size: 1.2rem;
+  color: white;
+  border: 2px solid white;
+  outline: none;
+  padding-left: 20px;
+}
+
+.search ul {
+  position: absolute;
+  top: 55px;
+  list-style: none;
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: white;
+  color: black;
+  padding: 0.2rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+
+.search li {
+  padding: 10px;
+  cursor: pointer;
+  background-color: rgba(04, 04, 27, 1);
+}
+
+.search li:hover {
+  background-color: rgba(9, 9, 58, 1);
+}
+
+.search a {
+  text-decoration: none;
+  color: #e04693;
+  background-color: #040427;
+  font-size: 1.2rem;
+}
+
+.search a:hover {
+  text-decoration: underline;
+  background-color: rgba(9, 9, 58, 1);
+}
+
+.border {
+  border: 3px solid transparent;
+}
+
+.border:hover {
+  border: 4px solid white;
+  border-radius: 5px;
+}
+
+.search:hover,
+.search:focus-within {
+  z-index: 10; 
+  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.6), 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+.hover:hover,
+.shadow:hover {
+  z-index: 5;
+  position: relative;
+}
+
+.container {
+  margin: 3%;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box {
+  width: 100%;
+  height: auto;
+  margin-top: 30px;
+  max-width: 800px;
+  border: 5px outset rgb(226, 76, 34);
+  background-color: rgb(230, 177, 107);
+  color: black;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 20px;
+  min-height: 350px;
+}
+
+th, td {
+  border: 2px solid green;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #f0f0f0;
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+  word-break: break-word;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  th, td {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .box {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 380px) {
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .search {
+    margin-top: 1rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-logo, .search {
+    width: 100%;
+    text-align: center;
+  }
+
+  .logo {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .logo-img1{
+    width: 190px;
+  }
+  .logo-img2 {
+    width: 50px;
+  }
+
+  .search ul {
+    top: 55px;
+  }
+
+  .material-section {
+    padding: 20px;
+  }
+  
+}
+
+@media only screen and (min-width:380px) and (max-width: 700px) {
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .search {
+    margin-top: 1rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-logo, .search {
+    width: 100%;
+    text-align: center;
+  }
+
+  .logo {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .logo-img1, .logo-img2 {
+    height: 40px;
+    margin-right: 0.5rem;
+  }
+
+  .search ul {
+    top: 60px;
+  }
+
+}
+
+@media only screen and (min-width: 700px) and (max-width: 1090px) {
+  .menu {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  .search {
+    margin-top: 1rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-logo, .search {
+    width: 100%;
+    text-align: center;
+  }
+
+  .logo {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .search ul {
+    top: 55px;
+  }
+  
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="nav-logo border hover">
+        <div class="logo">
+          <img src="name.png" alt="Diploma Study" class="logo-img1">
+          <img src="new_image.png" alt="Logo" class="logo-img2">
+        </div>
+      </div>
+      <div class="menu">
+        <a href="notes.html" target="_blank" class="border hover">Notes</a>
+        <a href="https://www.scribd.com/" target="_blank" class="border hover">Books</a>
+        <a href="https://sbtelms.bihar.gov.in/login/index.php" target="_blank" class="border hover">Lectures</a>
+        <a href="https://www.docsansar.com/" target="_blank" class="border hover">PYQs</a>
+        <a href="https://sbtelms.bihar.gov.in/login/index.php" target="_blank" class="border hover">Courses</a>
+      </div>
+      <div class="search border shadow">
+        <input type="text" id="searchBar" placeholder="🔍NOTES,PYQs,QUESTION BANKS,.......">
+        <ul id="results" class="border" style="box-shadow: 0 10px 30px rgba(0, 255, 255, 0.6), 0 0 20px rgba(0, 255, 255, 0.4);"></ul>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+   <div class="box">
+    <h1>📚 Even Semester (2nd, 4th, 6th) Notes, PYQ, MCQ, Practical 📚</h1>
+    <table>
+      <tr>
+        <th style="font-size: 28px;">Branch</th>
+        <th style="font-size: 24px;">📖 Notes | ❓ PYQ | ✅ MCQ | 🛠 Practical</th>
+      </tr>
+      <tr>
+        <td>💻 CSE (Computer Science & Engineering):</td>
+        <td><a href="https://drive.google.com/file/d/1_K48PV8PCWw8U323XDoQ1jSqzYuwY32j/view?usp=drivesdk" target="_blank">LINK HERE 🔗</a><br>
+        <a href="https://drive.google.com/drive/folders/1hvX1bkmf3MKv3Kh6svTo092oq1tueuvQ" target="_blank">LINK HERE 🔗</a><br>
+        <a href="https://drive.google.com/drive/folders/1kf-tiCt5aLzLaNOpEhEx5LuTNP_q8k-W" target="_blank">LINK HERE 🔗</a><br>
+        <a href="https://drive.google.com/drive/folders/1PhoQWvQXSY0X3RvZytSrmXBZ58XTshCU" target="_blank">LINK HERE 🔗</a></td>
+      </tr>
+      <tr>
+        <td>⚡ Electronics Engineering:</td>
+        <td><a href="https://drive.google.com/file/d/1_G9wBKVmKenZWq1RVoXE7X6zBgfcX_u-/view?usp=drivesdk" target="_blank">LINK HERE 🔗</a><br>
+        <a href="https://drive.google.com/drive/folders/1ig8XuvKQQ0bEHhj_Aw85KwDbw1u2s_rR" target="_blank">LINK HERE 🔗</a></td>
+      </tr>
+      <tr>
+        <td>🔌 Electrical Engineering:</td>
+        <td><a href="https://drive.google.com/file/d/1_JXZMPwvAkCsfyAJRH_2QQLUJQ1B1uts/view?usp=drivesdk" target="_blank">LINK HERE 🔗</a><br>
+        <a href="https://drive.google.com/drive/folders/1KGQEyxhFJSrvnl4t9ywUYxjWuDyHuPsS" target="_blank">LINK HERE 🔗</a></td>
+      </tr>
+      <tr>
+        <td>🛠 Mechanical Engineering:</td>
+        <td><a href="https://drive.google.com/file/d/1_JqDVZma-Q1HmyjoAvebWu9tvYydJYrB/view?usp=drivesdk" target="_blank">LINK HERE 🔗</a><br>
+        <a href="https://drive.google.com/drive/folders/14wo5_yyTmBYmuDVYy-EzssY8Mw3ys53K" target="_blank">LINK HERE 🔗</a></td>
+      </tr>
+      <tr>
+        <td>🔍 Other Branch Subjects:</td>
+        <td><a href="https://drive.google.com/file/d/1_JXZMPwvAkCsfyAJRH_2QQLUJQ1B1uts/view?usp=drivesdk" target="_blank">LINK HERE 🔗</a></td>
+      </tr>
+   </table>
+   </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
