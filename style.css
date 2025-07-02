@@ -551,7 +551,7 @@ footer {
   }
   
   .first-block {
-    gap:15px;
+    gap:25px;
   }
   
   .image-block {
@@ -604,8 +604,8 @@ footer {
   }
 
   .first-block {
-    gap:15px;
-  
+    gap:30px;
+  }
 }
 
 @media only screen and (min-width: 880px) and (max-width:1395px) {
@@ -651,7 +651,10 @@ footer {
   .search ul {
     top: 55px;
   }
-  
+
+  .first-block {
+    gap:30px;
+  }
 }
 
 @media (max-width:775px) {
