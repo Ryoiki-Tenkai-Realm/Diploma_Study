@@ -563,6 +563,12 @@ footer {
   }
 }
 
+@media (max-width: 768px) {
+  .image-block {
+    margin-top: 20px; /* or padding, depending on your layout */
+  }
+}
+
 
 @media only screen and (min-width:380px) and (max-width: 700px) {
   .menu {
@@ -604,7 +610,7 @@ footer {
   }
 
   .first-block {
-    gap:50px;
+    gap:7px;
   }
 }
 
@@ -653,7 +659,7 @@ footer {
   }
 
   .first-block {
-    gap:50px;
+    gap:7px;
   }
 }
 
