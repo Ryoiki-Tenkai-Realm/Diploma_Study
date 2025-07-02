@@ -551,7 +551,7 @@ footer {
   }
   
   .first-block {
-    gap:0px;
+    gap:15px;
   }
   
   .image-block {
@@ -602,6 +602,9 @@ footer {
   .material-section {
     padding: 30px;
   }
+
+  .first-block {
+    gap:15px;
   
 }
 
